@@ -38,4 +38,4 @@ for rotation in rotations_list:
     dial_passes_zero_count += result[2]
 
 print(f'The password is {dial_passes_zero_count + dial_at_zero_count}!')
-# 7778 is too high
+# 7778 is too high, 5626 is too low
