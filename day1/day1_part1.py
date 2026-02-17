@@ -7,6 +7,22 @@ with open('day1_input.txt', 'r') as input_file:
 print(rotations_list)
 
 dial_start_position = 50
+dial_at_zero_count = 0
+
 
 def is_dial_position_zero(starting_position, rotation):
-    # something recursive?
+    if rotation[0] == 'R':
+        new_position = starting_position + int(rotation[1:])
+        if new_position > 99:
+            new_position -= 100
+        elif new_position < 0:
+            new_position += 100
+    else:
+        new_position = starting_position - int(rotation[1:])
+        if new_position > 99:
+            new_position -= 100
+        elif new_position < 0:
+            new_position += 100
+
+    if new_position == 0:
+        dial_at_zero_count += 1
