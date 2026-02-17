@@ -1,8 +1,6 @@
 with open('day1_input.txt', 'r') as input_file:
     rotations_list = [line.replace('\n', '') for line in input_file.readlines()]
 
-print(rotations_list)
-
 dial_start_position = 50
 dial_at_zero_count = 0
 
