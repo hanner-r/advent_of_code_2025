@@ -24,5 +24,12 @@ def is_dial_position_zero(starting_position, rotation):
         elif new_position < 0:
             new_position += 100
 
-    if new_position == 0:
+    return (new_position == 0), new_position
+
+
+for rotation in rotations_list:
+    result = is_dial_position_zero(dial_start_position, rotation)
+    if result[0] is True:
         dial_at_zero_count += 1
+    dial_start_position = result[1]
+
