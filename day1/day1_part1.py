@@ -1,6 +1,3 @@
-# The actual password is the number of times the dial is left pointing at 0 after
-# any rotation in the sequence
-
 with open('day1_input.txt', 'r') as input_file:
     rotations_list = [line.replace('\n', '') for line in input_file.readlines()]
 
@@ -37,6 +34,4 @@ for rotation in rotations_list:
         dial_at_zero_count += 1
     dial_start_position = result[1]
 
-print(dial_at_zero_count)
-# I got an answer of 430, which is too low. need to review my logic
-# I see now that some rotations are 3 digits (e.g. 'L692') - I need to account for these.
+print(f'The password is {dial_at_zero_count}!')
