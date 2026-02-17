@@ -6,9 +6,10 @@ dial_at_zero_count = 0
 dial_passes_zero_count = 0
 
 
-def is_dial_position_zero(starting_position, dial_rotation, count):
+def is_dial_position_zero(starting_position, dial_rotation):
     rotation_direction = dial_rotation[0]
     rotation_distance = int(dial_rotation[1:])
+    count = 0
 
     while rotation_distance > 99:
         rotation_distance -= 100
@@ -30,11 +31,11 @@ def is_dial_position_zero(starting_position, dial_rotation, count):
 
 
 for rotation in rotations_list:
-    result = is_dial_position_zero(dial_start_position, rotation, dial_passes_zero_count)
+    result = is_dial_position_zero(dial_start_position, rotation)
     if result[0] is True:
         dial_at_zero_count += 1
     dial_start_position = result[1]
     dial_passes_zero_count += result[2]
 
 print(f'The password is {dial_passes_zero_count + dial_at_zero_count}!')
-# getting a very long number as the answer so something is definitely not right!
+# 7778 is too high
