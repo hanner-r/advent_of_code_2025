@@ -13,18 +13,28 @@ def is_dial_position_zero(starting_position, dial_rotation):
     while rotation_distance > 99:
         rotation_distance -= 100
 
-    if rotation_direction == 'R':
-        new_position = starting_position + rotation_distance
-        if new_position > 99:
-            new_position -= 100
-        elif new_position < 0:
-            new_position += 100
-    else:
-        new_position = starting_position - rotation_distance
-        if new_position > 99:
-            new_position -= 100
-        elif new_position < 0:
-            new_position += 100
+    if rotation_direction == 'L':
+        rotation_distance = -1 * rotation_distance
+
+    new_position = starting_position + rotation_distance
+
+    if new_position > 99:
+        new_position -= 100
+    elif new_position < 0:
+        new_position += 100
+
+    # if rotation_direction == 'R':  # how can I change this loop to remove repetition?
+    #     new_position = starting_position + rotation_distance
+    #     if new_position > 99:
+    #         new_position -= 100
+    #     elif new_position < 0:
+    #         new_position += 100
+    # else:
+    #     new_position = starting_position - rotation_distance
+    #     if new_position > 99:
+    #         new_position -= 100
+    #     elif new_position < 0:
+    #         new_position += 100
 
     return (new_position == 0), new_position
 
